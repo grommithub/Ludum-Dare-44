@@ -17,9 +17,10 @@ public class UpPickableItem : MonoBehaviour
         objectsToDeactivate.SetActive(false);
         rb.simulated = false;
     }
-    public virtual void GetThrown(Vector2 direction)
+    public virtual void GetThrown(Vector2 direction, Vector2 position)
     {
         transform.parent = null;
+        transform.position = position;
         objectsToDeactivate.SetActive(true);
         rb.velocity = direction * 20;
         if(rb != null)

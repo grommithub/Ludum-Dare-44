@@ -4,7 +4,8 @@ public class PickUpItem : MonoBehaviour
 {
     public Transform pickUpTransform;
     [SerializeField] private UpPickableItem objectToPickUp;
-    [SerializeField] public UpPickableItem heldObject;
+    [SerializeField] internal UpPickableItem heldObject;
+    [SerializeField] private Transform throwStart;
 
     private Vector2 throwdirection;
 
@@ -30,7 +31,7 @@ public class PickUpItem : MonoBehaviour
         }
         else if (Input.GetButtonDown(input.interactButtonName) && heldObject != null)
         {
-            ThrowObject(throwdirection);
+            ThrowObject(throwdirection, throwStart.position);
         }
     }
 
@@ -46,14 +47,15 @@ public class PickUpItem : MonoBehaviour
         if(input.inputVector.normalized != Vector2.zero)
         {
             throwdirection = input.inputVector.normalized;
+            throwStart.localPosition = new Vector3(throwdirection.x, throwdirection.y, 0);
         }
             
     }
 
-    private void ThrowObject(Vector2 direction)
+    private void ThrowObject(Vector2 direction, Vector2 position)
     {
         {
-            heldObject.GetThrown(direction);
+            heldObject.GetThrown(direction, position);
             heldObject = null;
         }
     }
