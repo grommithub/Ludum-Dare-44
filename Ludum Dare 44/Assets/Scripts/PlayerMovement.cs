@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
         GetAllComponents();    
     }
 
-    internal void GetAllComponents()
+    private void GetAllComponents()
     {
         input = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody2D>();

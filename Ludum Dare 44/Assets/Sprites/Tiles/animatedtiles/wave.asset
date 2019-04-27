@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: wave
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 21300000, guid: 3675bbc88ff05445b97cc41304510ceb, type: 3}
+  - {fileID: 21300000, guid: 14d0eae106da147f6ad638d922df5ba1, type: 3}
+  - {fileID: 21300000, guid: 9c5a0af6d798649d68616d04cfabae85, type: 3}
+  - {fileID: 21300000, guid: 4e272400467db4f20a188a5b8844656e, type: 3}
+  m_MinSpeed: 1
+  m_MaxSpeed: 2
+  m_AnimationStartTime: 0
+  m_TileColliderType: 0
