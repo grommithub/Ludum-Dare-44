@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput input;
     private Rigidbody2D rb;
 
+    
+
     void Start()
     {
         GetAllComponents();    
