@@ -29,6 +29,7 @@ public class TextBox : MonoBehaviour
 
     void Start()
     {
+        fixedFrameCount = 1;
         audio = GetComponent<AudioSource>();
 
         nameBox.text = header;

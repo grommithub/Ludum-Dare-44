@@ -21,13 +21,13 @@ public class TextBoxSpawner : MonoBehaviour
 
     void Start()
     {
+        talk = GetComponent<ITalksWithTextBox>();
         if (talk != null)
         {
             voice = talk.voice;
             framesBetweenChars = talk.timeBetweenChars;
         }
 
-        talk = GetComponent<ITalksWithTextBox>();
         canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
     }
 

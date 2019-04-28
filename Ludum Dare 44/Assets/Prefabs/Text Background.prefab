@@ -161,6 +161,9 @@ MonoBehaviour:
   voice: {fileID: 0}
   audio: {fileID: 0}
   boxoffset: {x: 0, y: 1, z: 0}
+  pitchIsRandom: 0
+  highestPitch: 0
+  lowestPitch: 0
 --- !u!82 &-9035100356148010708
 AudioSource:
   m_ObjectHideFlags: 0
@@ -293,7 +296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 230, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &1666872660325694921
@@ -486,7 +489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 30, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1498405626466055969

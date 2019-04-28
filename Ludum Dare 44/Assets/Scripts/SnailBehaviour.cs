@@ -10,7 +10,7 @@ public class SnailBehaviour : UpPickableItem, ITalksWithTextBox
     [SerializeField] private AudioClip _voice;
     [SerializeField] private int _timeBetweenChars;
 
-    public new void Start()
+    public new void Awake()
     {
         characterName = _characterName;
         rb = GetComponent<Rigidbody2D>();

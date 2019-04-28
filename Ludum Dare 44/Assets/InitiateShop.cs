@@ -33,4 +33,5 @@ public class InitiateShop : MonoBehaviour
             print("exit");
         }
     }
+    
 }
