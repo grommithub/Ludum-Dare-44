@@ -6,7 +6,7 @@ public class UpPickableItem : MonoBehaviour
     [SerializeField] float weight;
     [SerializeField] private Rigidbody2D rb;
 
-    public virtual void Start()
+    public void Start()
     {
         rb = GetComponentInChildren<Rigidbody2D>();
     }

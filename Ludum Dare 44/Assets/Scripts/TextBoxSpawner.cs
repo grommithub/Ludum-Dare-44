@@ -7,8 +7,11 @@ public class TextBoxSpawner : MonoBehaviour
     [TextArea]public string textBoxContents;
     public int framesBetweenChars = 1;
 
+    private ITalksWithTextBox talk;
+
     void Start()
     {
+        talk = GetComponent<ITalksWithTextBox>();
         canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
     }
 
@@ -27,6 +30,7 @@ public class TextBoxSpawner : MonoBehaviour
         var textboxscript = box.GetComponent<TextBox>();
         textboxscript.thingToFollow = gameObject.transform;
         textboxscript.entireText = textBoxContents;
-        textboxscript.framesBetweenChars = framesBetweenChars;
+        textboxscript.framesBetweenChars = talk.timeBetweenChars;
+        if(talk != null) textboxscript.voice = talk.voice;
     }
 }

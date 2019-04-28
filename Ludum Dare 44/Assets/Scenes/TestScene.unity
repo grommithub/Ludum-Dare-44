@@ -175,6 +175,8 @@ MonoBehaviour:
   objectsToDeactivate: {fileID: 1458594884}
   weight: 0
   rb: {fileID: 0}
+  _voice: {fileID: 0}
+  _timeBetweenChars: 0
 --- !u!212 &83509545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13815,6 +13817,8 @@ MonoBehaviour:
   objectsToDeactivate: {fileID: 1866761954}
   weight: 0
   rb: {fileID: 0}
+  _voice: {fileID: 0}
+  _timeBetweenChars: 0
 --- !u!212 &517846247
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14027,6 +14031,8 @@ MonoBehaviour:
   objectsToDeactivate: {fileID: 1006705243}
   weight: 0
   rb: {fileID: 0}
+  _voice: {fileID: 0}
+  _timeBetweenChars: 0
 --- !u!212 &670692175
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14489,6 +14495,8 @@ MonoBehaviour:
   objectsToDeactivate: {fileID: 359079515}
   weight: 0
   rb: {fileID: 0}
+  _voice: {fileID: 0}
+  _timeBetweenChars: 0
 --- !u!212 &1028222355
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14607,6 +14615,8 @@ MonoBehaviour:
   objectsToDeactivate: {fileID: 1800109943}
   weight: 0
   rb: {fileID: 0}
+  _voice: {fileID: 0}
+  _timeBetweenChars: 0
 --- !u!212 &1131144939
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14725,6 +14735,8 @@ MonoBehaviour:
   objectsToDeactivate: {fileID: 1884139876}
   weight: 0
   rb: {fileID: 0}
+  _voice: {fileID: 0}
+  _timeBetweenChars: 0
 --- !u!212 &1159926295
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14843,6 +14855,8 @@ MonoBehaviour:
   objectsToDeactivate: {fileID: 1281962565}
   weight: 0
   rb: {fileID: 0}
+  _voice: {fileID: 0}
+  _timeBetweenChars: 0
 --- !u!212 &1235582503
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15140,6 +15154,8 @@ MonoBehaviour:
   objectsToDeactivate: {fileID: 163675661}
   weight: 0
   rb: {fileID: 0}
+  _voice: {fileID: 0}
+  _timeBetweenChars: 0
 --- !u!1 &1458594884
 GameObject:
   m_ObjectHideFlags: 0
@@ -15253,6 +15269,8 @@ MonoBehaviour:
   objectsToDeactivate: {fileID: 1718534053}
   weight: 0
   rb: {fileID: 0}
+  _voice: {fileID: 0}
+  _timeBetweenChars: 0
 --- !u!212 &1517786019
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15512,6 +15530,8 @@ MonoBehaviour:
   objectsToDeactivate: {fileID: 1383741491}
   weight: 0
   rb: {fileID: 0}
+  _voice: {fileID: 0}
+  _timeBetweenChars: 0
 --- !u!212 &1697077680
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16078,6 +16098,8 @@ MonoBehaviour:
   objectsToDeactivate: {fileID: 374622912}
   weight: 0
   rb: {fileID: 0}
+  _voice: {fileID: 8300000, guid: f0db2911aee55fb46b34878c9ac0ba93, type: 3}
+  _timeBetweenChars: 40
 --- !u!212 &2117848404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16155,5 +16177,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextBoxPrefab: {fileID: 1666872659361741402, guid: 4cdca031390948a489801d2c3d892540,
     type: 3}
-  textBoxContents: Hey babe you're a cute smooby and I love you < 3
+  textBoxContents: I'm a snail. Everything about me is slow. My text box is even too
+    slow.
   framesBetweenChars: 10

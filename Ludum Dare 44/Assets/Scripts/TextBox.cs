@@ -13,12 +13,19 @@ public class TextBox : MonoBehaviour
     private int charIndex;
 
     public int framesBetweenChars = 1;
+    public AudioClip voice;
+
+    private int fixedFrameCount;
+    [SerializeField] private AudioSource audio;
+    private int frameWhenTextBoxOpened;
 
     public Vector3 boxoffset = new Vector2();
 
 
     void Start()
     {
+        audio = GetComponent<AudioSource>();
+        
         textbox = GetComponentInChildren<TMP_Text>();
         rectTransform = GetComponent<RectTransform>();
         cam = Camera.main;
@@ -34,7 +41,9 @@ public class TextBox : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (textbox.text.Length == entireText.Length) return;
         AddText();
+        fixedFrameCount++;
     }
 
     private void FollowTarget()
@@ -44,9 +53,10 @@ public class TextBox : MonoBehaviour
 
     private void AddText()
     {
-        if(textbox.text.Length < entireText.Length && Time.frameCount % framesBetweenChars == 0)
+        if(textbox.text.Length < entireText.Length && fixedFrameCount % framesBetweenChars == 0)
         {
             textbox.text += messageAsChars[charIndex];
+            if(!char.IsWhiteSpace(messageAsChars[charIndex])) audio.PlayOneShot(voice);
             charIndex++;
         }
     }

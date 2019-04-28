@@ -1,16 +1,7 @@
 fileFormatVersion: 2
-guid: 7d9903998814b41699eefcf7e8b9d1e4
+guid: afefe8d9192dc4e15b539615327a7c18
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 8639464552353796045
-    second: dog1-sheet_0
-  - first:
-      213: 6938959999768945869
-    second: dog1-sheet_1
-  - first:
-      213: -1391056575010911403
-    second: dog1-sheet_2
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -49,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -102,74 +93,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: dog1-sheet_0
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 0
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26d631a1cb99d40f298360caa632730a
-      internalID: 8639464552353796045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dog1-sheet_1
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 0
-        width: 16
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58fea9bd1231f4bea988d7d3fc5cbe48
-      internalID: 6938959999768945869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dog1-sheet_2
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 16
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ccac39885aad54878ab2c72bf455b0a5
-      internalID: -1391056575010911403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c5183a9849fca4e07819d7f45c15d0ff
+    spriteID: 800617a75d2c54cc4b59185b2ca4a11f
     internalID: 0
     vertices: []
     indices: 
