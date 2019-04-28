@@ -4,11 +4,11 @@ public class UpPickableItem : MonoBehaviour
 {
     [SerializeField] GameObject objectsToDeactivate;
     [SerializeField] float weight;
-    [SerializeField] private Rigidbody2D rb;
+    [SerializeField]  public Rigidbody2D rb;
 
     public void Start()
     {
-        rb = GetComponentInChildren<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
     public void GetPickedUp(Transform pickUpPosition)
     {
