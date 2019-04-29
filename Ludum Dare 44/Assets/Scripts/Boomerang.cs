@@ -9,7 +9,9 @@ public class Boomerang : MonoBehaviour
     [SerializeField] private float currentDistance;
     [SerializeField] private float speed;
 
-    private Transform player;
+    public Transform player;
+
+    public Vector3 direction;
 
     [SerializeField]private Transform child;
 
@@ -21,7 +23,7 @@ public class Boomerang : MonoBehaviour
     void Start()
     {
         child = transform.GetChild(0).transform;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        
         startposition = transform.position;
         
             //startposition - player.position;
@@ -30,7 +32,7 @@ public class Boomerang : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!goingTowardsPlayer)transform.up = Vector2.up;
+        if(!goingTowardsPlayer)transform.up = direction;
         else
         {
             transform.up = transform.up = player.position - transform.position;
@@ -55,12 +57,22 @@ public class Boomerang : MonoBehaviour
             pickup.GetPickedUp(child);
             heldItem = pickup;
         }
-        if(collision.CompareTag("Player"))
+        if(collision.CompareTag("Player") && goingTowardsPlayer)
         {
             if(heldItem != null)
             {
                 heldItem.GetPickedUp(player.GetChild(0).transform);
                 heldItem.transform.rotation = Quaternion.identity;
+
+                PickUpItem pickupitem = player.GetComponent<PickUpItem>();
+                if(pickupitem.heldObject != null)
+                {
+                    heldItem.GetThrown(direction, transform.position);
+                }
+                else
+                {
+                    pickupitem.heldObject = heldItem;
+                }
             }
             Destroy(gameObject);
         }
