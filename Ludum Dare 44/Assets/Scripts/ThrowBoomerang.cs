@@ -10,7 +10,7 @@ public class ThrowBoomerang : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Boomerang"))
         {
             direction = throwStart.position - transform.position;
             GameObject rang = Instantiate(boomerang, throwStart.position, Quaternion.identity);
