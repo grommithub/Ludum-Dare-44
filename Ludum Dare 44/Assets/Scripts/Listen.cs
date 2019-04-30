@@ -6,6 +6,8 @@ public class Listen : MonoBehaviour
 {
     [SerializeField]private TextBoxSpawner thingToRead;
     private PickUpItem pickup;
+    [SerializeField] private GameObject pressO;
+
     void Start()
     {
         pickup = GetComponent<PickUpItem>();
@@ -15,6 +17,14 @@ public class Listen : MonoBehaviour
     void Update()
     {
         ConfirmOpenTextBox();
+        if(thingToRead != null)
+        {
+            pressO.SetActive(true);
+        }
+        else
+        {
+            pressO.SetActive(false);
+        }
     }
 
     private void ConfirmOpenTextBox()
@@ -33,7 +43,7 @@ public class Listen : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (pickup.heldObject != null) return;
+        if (Input.GetButtonDown("Interact")) return;
         thingToRead = collision.GetComponentInParent<TextBoxSpawner>();
         if (thingToRead != null)
         {

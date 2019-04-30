@@ -24,11 +24,13 @@ public class TextBox : MonoBehaviour
 
     public Vector3 boxoffset = new Vector2();
 
+    public float volume = 1;
    
 
 
     void Start()
     {
+        
         fixedFrameCount = 1;
         audio = GetComponent<AudioSource>();
 
@@ -44,6 +46,11 @@ public class TextBox : MonoBehaviour
     void Update()
     {
         FollowTarget();
+        if(thingToFollow == null)
+        {
+            print("no!");
+            Destroy(gameObject);
+        }
     }
 
     private void FixedUpdate()
@@ -55,7 +62,11 @@ public class TextBox : MonoBehaviour
 
     private void FollowTarget()
     {
-        rectTransform.position = cam.WorldToScreenPoint(thingToFollow.position + boxoffset);
+        if(thingToFollow != null) rectTransform.position = cam.WorldToScreenPoint(thingToFollow.position + boxoffset);
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public bool pitchIsRandom;
@@ -75,7 +86,7 @@ public class TextBox : MonoBehaviour
             if (!char.IsWhiteSpace(messageAsChars[charIndex]) && voice != null)
             {
                 if(pitchIsRandom) audio.pitch = RandomizePitch(lowestPitch, highestPitch);
-                audio.PlayOneShot(voice);
+                audio.PlayOneShot(voice, volume);
             }
             charIndex++;
         }

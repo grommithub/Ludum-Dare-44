@@ -1,13 +1,19 @@
 ﻿using UnityEngine;
 
-public class TextBoxSpawner : MonoBehaviour
+public class TextBoxSpawner : MonoBehaviour,  ITalksWithTextBox
 {
+    public string characterName { get; set; }
+    [SerializeField] private string _characterName = "Dave";
+    public int timeBetweenChars { get; set; }
+    public AudioClip voice { get; set; }
+
+    [SerializeField] private AudioClip _voice;
+    [SerializeField] private int _timeBetweenChars;
+
     public GameObject TextBoxPrefab;
     [SerializeField] private static Transform canvas;
     //public string characterName = "";
     [TextArea]public string textBoxContents;
-    public int framesBetweenChars = 1;
-    public AudioClip voice;
 
     private GameObject box;
 
@@ -17,34 +23,25 @@ public class TextBoxSpawner : MonoBehaviour
 
     public float highestPitch;
     public float lowestPitch;
-    private ITalksWithTextBox talk;
+
+    public float volume;
 
     void Start()
     {
-        talk = GetComponent<ITalksWithTextBox>();
-        if (talk != null)
-        {
-            voice = talk.voice;
-            framesBetweenChars = talk.timeBetweenChars;
-        }
-
+        if (volume == 0) volume = 1;
+        characterName = _characterName;
+        
+        voice = _voice;
+        timeBetweenChars = _timeBetweenChars;
+        
         canvas = GameObject.FindGameObjectWithTag("Canvas").transform;
+        if (timeBetweenChars == 0) timeBetweenChars = 1;
     }
-
-    
-    void Update()
-    {
-    
-    }
-
-    
-
-
 
     public void SpawnTextBox()
     {
         if (textBoxOpen) return;
-        box = Instantiate(TextBoxPrefab, canvas);
+        box = Instantiate(TextBoxPrefab, canvas) as GameObject;
         var textboxscript = box.GetComponent<TextBox>();
         textboxscript.thingToFollow = gameObject.transform;
         textboxscript.entireText = textBoxContents;
@@ -54,11 +51,10 @@ public class TextBoxSpawner : MonoBehaviour
         textboxscript.highestPitch = highestPitch;
         textboxscript.pitchIsRandom = pitchIsRandom;
 
-        if (talk != null)
-        {
-            textboxscript.header = talk.characterName;
-        }
-        textboxscript.framesBetweenChars = framesBetweenChars;
+        textboxscript.volume = volume;
+
+        textboxscript.header = characterName;
+        textboxscript.framesBetweenChars = timeBetweenChars;
 
         if(voice != null) textboxscript.voice = voice;
         textBoxOpen = true;

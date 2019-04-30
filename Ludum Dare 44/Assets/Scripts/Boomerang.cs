@@ -19,13 +19,14 @@ public class Boomerang : MonoBehaviour
 
     private bool goingTowardsPlayer = false;
     
-
+    private ThrowBoomerang throwRang;
     void Start()
     {
         child = transform.GetChild(0).transform;
         
         startposition = transform.position;
         
+        throwRang = player.GetComponent<ThrowBoomerang>();
             //startposition - player.position;
     }
 
@@ -67,13 +68,14 @@ public class Boomerang : MonoBehaviour
                 PickUpItem pickupitem = player.GetComponent<PickUpItem>();
                 if(pickupitem.heldObject != null)
                 {
-                    heldItem.GetThrown(direction, transform.position);
+                    heldItem.GetThrown(direction, transform.position, gameObject);
                 }
                 else
                 {
                     pickupitem.heldObject = heldItem;
                 }
             }
+            throwRang.canThrow = true;
             Destroy(gameObject);
         }
     }

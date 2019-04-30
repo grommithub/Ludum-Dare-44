@@ -31,7 +31,7 @@ public class PickUpItem : MonoBehaviour
         }
         else if (Input.GetButtonDown(input.interactButtonName) && heldObject != null)
         {
-            ThrowObject(throwdirection, throwStart.position);
+            ThrowObject(throwdirection, throwStart.position, gameObject);
         }
     }
 
@@ -52,10 +52,10 @@ public class PickUpItem : MonoBehaviour
             
     }
 
-    private void ThrowObject(Vector2 direction, Vector2 position)
+    private void ThrowObject(Vector2 direction, Vector2 position, GameObject gO)
     {
         {
-            heldObject.GetThrown(direction, position);
+            heldObject.GetThrown(direction, position, gO);
             heldObject = null;
         }
     }
