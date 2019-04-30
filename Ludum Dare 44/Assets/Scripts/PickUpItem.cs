@@ -9,6 +9,7 @@ public class PickUpItem : MonoBehaviour
 
     private Vector2 throwdirection;
 
+    public GameObject pressP;
 
     private PlayerInput input;
 
@@ -24,6 +25,14 @@ public class PickUpItem : MonoBehaviour
 
     void Update()
     {
+        if(objectToPickUp != null)
+        {
+            pressP.SetActive(true);
+        }
+        else
+        {
+            pressP.SetActive(false);
+        }
         GetThrowDirection();
         if (Input.GetButtonDown(input.interactButtonName) && heldObject == null)
         {
